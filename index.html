@@ -21,90 +21,97 @@
 </head>
 
 <body>
-<div class="container">
-	<!-- Title -->
-	<div class="jumbotron">
-      <h1 class="text-center">Rock Paper Scissors</h1>
-    </div>
+	<div class="container">
+		<!-- Title -->
+		<div class="jumbotron">
+	      <h1 class="text-center">Rock Paper Scissors</h1>
+	    </div>
 
-    <!-- Name Submission -->
-	<div class="row">
-		<div class="col-xs-4"></div>
-		<div class="col-xs-4 text-center">
-			<div id="custom-name-input">
-				<form>
-					<div class="input-group form-group">
-						<input id="name" type="text" class="form-control" placeholder="Your Name"/>
-						<span class="input-group-btn">
-						<button class="btn btn-default" type="submit" id="submit-button">Submit</button>
-						</span>
-					</div>
-				</form>
+	    <!-- Name Submission -->
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-4 text-center">
+				<div id="custom-name-input">
+					<form>
+						<div class="input-group form-group">
+							<input id="name" type="text" class="form-control" placeholder="Your Name"/>
+							<span class="input-group-btn">
+							<button class="btn btn-default" type="submit" id="submit-button">Submit</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-xs-4"></div>
+		</div>
+		
+		<!-- User Section -->
+		<div class="row text-center" id="user-section">
+			<div class="user col-xs-4">
+				<h4>Player 1: </h4>
+				<p id="player1"></p>
+				<p id="wins1"></p>
+				<p id="losses1"></p>
+				<p id="ties1"></p>
+			</div>
+			<div id="instructions-div" class="text-center col-xs-4">
+				<h4>Instructions: </h4>
+				<p id="instructions">Enter your name above to join the game.</p>
+				<p id="choice1"></p>
+				<p id="choice2"></p>
+			</div>
+			<div class="user col-xs-4">
+				<h4>Player 2: </h4>
+				<p id="player2"></p>
+				<p id="wins2"></p>
+				<p id="losses2"></p>
+				<p id="ties2"></p>
 			</div>
 		</div>
-		<div class="col-xs-4"></div>
-	</div>
+		
+		<!-- Choice Section -->
+		<div class="row" id="choice-section">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-10 text-center">
+				<div class="choice" id="rock" data-choice="rock">
+					<h4 class="text-center"><button class ="btn btn-default">Rock</button></h4>
+					<img class="img-responsive choice-img" src=" "/>
+				</div>
+				<div class="choice" id="paper" data-choice="paper">
+					<h4 class="text-center"><button class ="btn btn-default">Paper</button></h4>
+					<img class="img-responsive choice-img" src=" "/>
+				</div>
+				<div class="choice" id="scissors" data-choice="scissors">
+					<h4 class="text-center"><button class ="btn btn-default">Scissors</button></h4>
+					<img class="img-responsive choice-img" src=" "/>
+				</div>
+			</div>
+			<div class="col-xs-1"></div>
+		</div>	
+
+		<!-- Chat Area -->
+		<div class="row" id="chat-row">
+	    	<div class="col-xs-2"></div>
+	    	<div class="col-xs-8">
+	      		<h3 class="text-center">Chat: </h3>
+	      		<div id="chat-window">
+	      			<div id="input">
+	        			<form>
+	        				<div class="input-group col-xs-12 form-group">
+	        					<input id="chat" type="text" class="form-control"/>
+	        					<span class="input-group-btn"><button class="btn btn-default" type="submit" id="send-button">Send</button></span>
+	        				</div>
+	        			</form> 
+	      			</div>
+	    		</div>
+	    	<div class="col-xs-2"></div>  
+		</div>
+
+	</div><!-- end container -->
+
+  	<!-- Script -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/game.js"></script>
 	
-	<!-- User Section -->
-	<div class="row text-center" id="user-section">
-		<div class="user col-xs-4">
-			<h4>Player 1: </h4>
-			<p id="player1"></p>
-			<p id="wins1"></p>
-			<p id="losses1"></p>
-			<p id="ties1"></p>
-		</div>
-		<div id="instructions-div" class="text-center col-xs-4">
-			<h4>Instructions: </h4>
-			<p id="instructions">Enter your name above to join the game.</p>
-			<p id="choice1"></p>
-			<p id="choice2"></p>
-		</div>
-		<div class="user col-xs-4">
-			<h4>Player 2: </h4>
-			<p id="player2"></p>
-			<p id="wins2"></p>
-			<p id="losses2"></p>
-			<p id="ties2"></p>
-		</div>
-	</div>
-	
-	<!-- Choice Section -->
-	<div class="row" id="choice-section">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10 text-center">
-			<div class="choice" id="rock" data-choice="rock">
-				<h4 class="text-center"><button class ="btn btn-default">Rock</button></h4>
-				<img class="img-responsive choice-img" src=" "/>
-			</div>
-			<div class="choice" id="paper" data-choice="paper">
-				<h4 class="text-center"><button class ="btn btn-default">Paper</button></h4>
-				<img class="img-responsive choice-img" src=" "/>
-			</div>
-			<div class="choice" id="scissors" data-choice="scissors">
-				<h4 class="text-center"><button class ="btn btn-default">Scissors</button></h4>
-				<img class="img-responsive choice-img" src=" "/>
-			</div>
-		</div>
-		<div class="col-xs-1"></div>
-	</div>	
-
-	<!-- Chat Area -->
-	<div class="row" id="chat-row">
-    	<div class="col-xs-2"></div>
-    	<div class="col-xs-8">
-      		<h3 class="text-center">Chat: </h3>
-      		<div id="chat-window">
-      			<div id="input">
-        			<form>
-        				<div class="input-group col-xs-12 form-group">
-        					<input id="chat" type="text" class="form-control"/>
-        					<span class="input-group-btn"><button class="btn btn-default" type="submit" id="send-button">Send</button></span>
-        				</div>
-        			</form> 
-      			</div>
-    		</div>
-    	<div class="col-xs-2"></div>  
-	</div>
-
-</div><!-- end container -->
+</body>
+</html>
